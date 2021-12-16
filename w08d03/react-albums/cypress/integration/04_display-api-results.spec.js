@@ -15,9 +15,10 @@ describe('final test', () => {
       .should('have.value', 'Daft Punk');
 
     // wait for the search results to load
-    cy.wait('@search-results')
-      // look through the results for a particular album
-      .get('main')
+    cy.wait('@search-results');
+      
+    // look through the results for a particular album
+    cy.get('main')
       .contains('Random Access Memories');
 
     // uncheck the explicit checkbox
